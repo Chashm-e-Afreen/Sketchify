@@ -37,7 +37,8 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## Built With
 
 - [ElectronJS](https://electronjs.org/docs) - Cross Platform UIs with Javascript
-- [Neon Bindings](https://neon-bindings.com/) - Rust-Nodejs interop
+- [Neon Bindings](https://neon-bindings.com/) - Rust-Nodejs Interop
+- [TailwindCSS](https://tailwindcss.com/) - CSS Framework
 
 ## License
 
