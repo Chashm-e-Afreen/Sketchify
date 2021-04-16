@@ -1,0 +1,40 @@
+/* @font-face {
+	font-family: "Junicode";
+	src: url("assets/fonts/Junicode.woff2") format("woff2");
+} */
+body {
+	height: 100vh;
+	background: #2e3440;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #e5e9f0;
+	overflow: auto;
+}
+#description {
+	font-family: Junicode;
+	color: #eceff4;
+}
+#empty-cover {
+	color: #d8dee9;
+}
+.uploading-image {
+	display: flex;
+}
+#im {
+	display: none;
+}
+#upload-button {
+	display: none;
+}
+#upload-button-style {
+	display: inline-block;
+	padding: 10px 12px;
+	cursor: pointer;
+}

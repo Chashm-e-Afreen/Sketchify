@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,13 +6,95 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Sketchify</title>
+    <link rel= "stylesheet" href= "css/styles.css">
+    <link rel= "stylesheet" href= "css/index.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div id="app" class="flex flex-col">
+      <div class="p-8 justify-center content-center">
+        <div class="rounded-lg shadow-xl">
+          <div class="p-16" style = "background: #2e3440">
+            <HelloWorld
+              class="font-serif text-xl mb-5"
+              msg="Photo Sketchifier - Muhammad Rehan Qureshi "
+              />
+            <div id="container">
+              <!-- Insert your svg or image here -->
+
+              <div class="flex flex-col justify-center content-center">
+                <label
+                  id="upload-button-style"
+                  class="mx-auto text-white rounded-lg font-serif text-lg mb-3 bg-purple-700"
+                  >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="#e5e9f0"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                      ></path>
+                  </svg>
+                  <input
+                    type="file"
+                    accept="image/jpeg"
+                    @change="uploadImage"
+                    class="mx-auto w-40"
+                    id="upload-button"
+                    />
+                </label>
+                <img src="img/lixin.jpg" class="mx-auto uploading-image" id="im" />
+              </div>
+              <div
+                id="empty-cover"
+                class="rounded mx-auto sm:w-full md:w-48 md:h-48 py-16 text-center opacity-50 md:border-solid md:border-2 md:border-gray-400"
+                >
+                <svg
+                  class="mx-auto feather feather-image"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <div class="py-4 font-serif text-lg" style="color: #eceff4">
+                  Select Image
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center">
+              <!-- <h1 class="font-bold text-lg text-gray-400 mb-1">Sketchify</h1> -->
+              <p class="text-lg" id="description">
+                A simple Computer Vision project.
+              </p>
+              <button
+                class="mt-6 hover:bg-blue-800 bg-blue-600 text-lg text-white rounded-full px-12 py-3 shadow-xl focus:outline-none font-serif"
+                style=""
+                id="button"
+                >
+                Sketchify!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
