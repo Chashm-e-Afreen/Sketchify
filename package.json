@@ -1,28 +1,24 @@
 {
-  "name": "electron-quick-start",
+  "name": "sketchify",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Native Rust sketching app on musl",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-build-env neon build @amilajack/neon-hello --release"
+    "start": "electron35 . --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations",
+    "build": "RUSTFLAGS='-C target-feature=-crt-static' RUST_MIN_STACK=8388608 cargo build --release && cp target/release/libsketchify_native.so ./index.node"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Rust",
+    "Neon",
+    "musl"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Quasar",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^11.0.3",
-    "electron-build-env": "^0.2.0",
-    "neon-cli": "^0.3.3"
+    "@neon-rs/cli": "^1.0.0"
   },
   "dependencies": {
-    "@amilajack/neon-hello": "^1.0.2"
+    "image": "^0.24.0"
   }
 }
